@@ -1,0 +1,59 @@
+body * {
+    visibility: hidden;
+
+}
+
+div#nav {
+    visibility: hidden;
+}
+
+#folder_jstree,
+#folder_jstree * {
+    visibility: visible;
+}
+
+ul {
+    margin-left: 20px;
+}
+
+li {
+    list-style-type: none;
+    margin: 10px;
+    position: relative;
+}
+
+li::before {
+    content: "";
+    position: absolute;
+    top: -14px;
+    left: -1px;
+    border-left: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0 0 0 0px;
+    width: 24px;
+    height: 24px;
+}
+
+li::after {
+    position: absolute;
+    content: "";
+    top: 10px;
+    left: -1px;
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    border-radius: 0px 0 0 0;
+    width: 25px;
+    height: calc(99% + 0.16px);
+}
+
+li:last-child::after {
+    display: none;
+}
+
+li:last-child:before {
+    border-radius: 0 0 0 2px;
+}
+
+ul>li:first-child::after {
+    border-radius: 0 0 0 5px;
+}

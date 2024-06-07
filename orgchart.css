@@ -1,0 +1,131 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+}
+div#form{
+    display: flex;
+    float: right;
+    background-color: lightblue;
+}
+form input#Input{
+  width : 9.823rem;
+}
+div#section-to-print{
+  width: fit-content;
+}
+h4{
+    color: black ;
+}
+ul{
+  display: block;
+  width: fit-content;
+  list-style-type: none;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 25px;
+}
+li {
+  width: fit-content;
+  list-style-type: none;
+  margin: 5px;
+  position: relative;
+}
+li::before {
+  content: "";
+  position: absolute;
+  top: -17px;
+  left: -33px;
+  border-left: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  border-radius: 0 0 0 0px;
+  width: 31px;
+  height: 27px;
+}
+
+li::after {
+  position: absolute;
+  content: "";
+  top: 10px;
+  left: -33px;
+  border-left: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  border-radius: 0px 0 0 0;
+  width: 25px;
+  height: calc(99% + 0.16px);
+}
+ul>li:first-child::after {
+  border-radius: 0px 0 0 0;
+}
+
+li:last-child::after {
+  display: none;
+}
+
+li:last-child:before {
+  border-radius: 0 0 0 2px;
+}
+
+@media print {
+    body * {
+      visibility: hidden;
+    }
+    #section-to-print, #section-to-print * {
+      visibility: visible;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: x-small;
+    }
+    ul{
+      display: block;
+      width: fit-content;
+      list-style-type: none;
+      margin-block-start: 0em;
+      margin-block-end: 0em;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+      padding-inline-start: 15px;
+    }
+    li {
+      width: fit-content;
+      list-style-type: none;
+      margin: 2px;
+      position: relative;
+    }
+    li::before {
+      content: "";
+      position: absolute;
+      top: -9px;
+      left: -19px;
+      border-left: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+      border-radius: 0 0 0 0px;
+      width: 16px;
+      height: 14px;
+  }
+    li::after {
+      position: absolute;
+      content: "";
+      top: 5px;
+      left: -19px;
+      border-left: 1px solid #ccc;
+      border-top: 1px solid #ccc;
+      border-radius: 0px 0 0 0;
+      width: 16px;
+      height: calc(99% + 0.16px);
+    }
+    ul>li:first-child::after {
+      border-radius: 0px 0 0 0;
+    }
+    ul>li:last-child::after {
+      border-radius: 0px 0 0 0;
+      display: none;
+    }
+    
+    li:last-child::after {
+      display: none;
+    }
+    li:last-child:before {
+      border-radius: 0 0 0 2px;
+    }    
+  }
